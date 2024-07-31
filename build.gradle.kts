@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id("maven-publish")
     id("org.springframework.boot") version "3.2.5"
     id("io.spring.dependency-management") version "1.1.4"
 }
@@ -10,6 +11,11 @@ version = "1.0"
 
 repositories {
     mavenCentral()
+}
+
+// java version 17
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
 }
 
 dependencies {
@@ -28,6 +34,23 @@ dependencyManagement {
     }
 }
 
+publishing {
+    publications {
+        register("mavenJava", MavenPublication::class) {
+            groupId = "com.easyspec"
+            artifactId = "APICommon"
+            version = "1.0"
+
+            from(components["java"])
+        }
+    }
+}
+
 tasks.test {
     useJUnitPlatform()
+}
+
+// disable bootJar
+tasks.named("bootJar") {
+    enabled = false
 }
