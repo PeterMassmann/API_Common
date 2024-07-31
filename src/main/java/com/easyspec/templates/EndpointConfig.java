@@ -10,7 +10,7 @@ public class EndpointConfig {
     private final Map<String, String> pathVariablePatterns;
     private final List<String> dependencies;
 
-    private EndpointConfig(String path, String type, List<String> methods, Map<String, String> pathVariablePatterns, List<String> dependencies) {
+    public EndpointConfig(String path, String type, List<String> methods, Map<String, String> pathVariablePatterns, List<String> dependencies) {
         this.path = path;
         this.type = type;
         this.methods = methods;
@@ -18,7 +18,7 @@ public class EndpointConfig {
         this.dependencies = dependencies;
     }
 
-    private EndpointConfig(String path, String type, List<String> methods, Map<String, String> pathVariablePatterns) {
+    public EndpointConfig(String path, String type, List<String> methods, Map<String, String> pathVariablePatterns) {
         this.path = path;
         this.type = type;
         this.methods = methods;
@@ -26,7 +26,7 @@ public class EndpointConfig {
         this.dependencies = List.of();
     }
 
-    private EndpointConfig(String path, String type, List<String> methods) {
+    public EndpointConfig(String path, String type, List<String> methods) {
         this.path = path;
         this.type = type;
         this.methods = methods;
@@ -34,7 +34,7 @@ public class EndpointConfig {
         this.dependencies = List.of();
     }
 
-    private EndpointConfig(String path, String type, List<String> methods, List<String> dependencies) {
+    public EndpointConfig(String path, String type, List<String> methods, List<String> dependencies) {
         this.path = path;
         this.type = type;
         this.methods = methods;
@@ -42,7 +42,7 @@ public class EndpointConfig {
         this.dependencies = dependencies;
     }
 
-    private EndpointConfig(String path, String type, String... methods) {
+    public EndpointConfig(String path, String type, String... methods) {
         this.path = path;
         this.type = type;
         this.methods = List.of(methods);
