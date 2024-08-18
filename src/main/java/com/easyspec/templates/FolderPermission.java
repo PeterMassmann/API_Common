@@ -25,6 +25,10 @@ public class FolderPermission {
         return new FolderPermission("exclusive", null);
     }
 
+    public static FolderPermission disabled() {
+        return new FolderPermission("disabled", null);
+    }
+
     @JsonValue
     public String getAccessibility() {
         return accessibility;
