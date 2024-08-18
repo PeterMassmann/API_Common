@@ -4,7 +4,7 @@ public class FolderConfig {
 
     private final String name;
     private final String extension;
-    private final int maxFileSize; // in bytes
+    private final long maxFileSize; // in bytes
     private final FolderPermission read;
     private final FolderPermission write;
     private final FolderPermission delete;
@@ -26,7 +26,7 @@ public class FolderConfig {
         return extension;
     }
 
-    public int getMaxFileSize() {
+    public long getMaxFileSize() {
         return maxFileSize;
     }
 
