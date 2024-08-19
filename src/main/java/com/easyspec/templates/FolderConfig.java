@@ -9,7 +9,7 @@ public class FolderConfig {
     private final FolderPermission write;
     private final FolderPermission delete;
 
-    public FolderConfig(String name, String extension, int maxFileSize, FolderPermission readAccessibility, FolderPermission writeAccessibility, FolderPermission deleteAccessibility) {
+    public FolderConfig(String name, String extension, long maxFileSize, FolderPermission readAccessibility, FolderPermission writeAccessibility, FolderPermission deleteAccessibility) {
         this.name = name;
         this.extension = extension;
         this.maxFileSize = maxFileSize;
