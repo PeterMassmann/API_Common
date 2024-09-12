@@ -1,5 +1,8 @@
 package com.easyspec.templates;
 
+import lombok.Getter;
+
+@Getter
 public class FolderConfig {
 
     private final String name;
@@ -16,29 +19,5 @@ public class FolderConfig {
         this.read = readAccessibility;
         this.write = writeAccessibility;
         this.delete = deleteAccessibility;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getExtension() {
-        return extension;
-    }
-
-    public long getMaxFileSize() {
-        return maxFileSize;
-    }
-
-    public FolderPermission getRead() {
-        return read;
-    }
-
-    public FolderPermission getWrite() {
-        return write;
-    }
-
-    public FolderPermission getDelete() {
-        return delete;
     }
 }
