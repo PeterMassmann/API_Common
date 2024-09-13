@@ -51,11 +51,11 @@ public class ErrorLoggerService<E extends BaseErrorLog> {
         }
     }
 
-    public E logError(BaseError error, String endpoint, HttpServletRequest request, Map<String, Object> data) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+    public E logError(BaseError error, String endpoint, HttpServletRequest request, Map<String, Object> data) throws ErrorLogInstantiationException {
         return this.logError(endpoint, error, request, data);
     }
 
-    public E logError(BaseError error, String endpoint, HttpServletRequest request) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+    public E logError(BaseError error, String endpoint, HttpServletRequest request) throws ErrorLogInstantiationException {
         return this.logError(error, endpoint, request, Map.of());
     }
 
