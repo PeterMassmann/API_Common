@@ -36,7 +36,7 @@ public class ErrorLoggerService<E extends BaseErrorLog> {
             errorLog.setEndpoint(endpoint);
             errorLog.setMethod(request.getMethod());
             errorLog.setStatus(error.getStatus());
-            errorLog.setErrorCode(errorLog.getErrorCode());
+            errorLog.setErrorCode(error.getCode());
             errorLog.setMessage(error.getMessage());
             errorLog.setIpAddress(request.getRemoteAddr());
             errorLog.setUserAgent(request.getHeader("User-Agent"));
