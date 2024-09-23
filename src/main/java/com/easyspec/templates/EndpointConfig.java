@@ -1,8 +1,11 @@
 package com.easyspec.templates;
 
+import lombok.Getter;
+
 import java.util.List;
 import java.util.Map;
 
+@Getter
 public class EndpointConfig {
     private final String path;
     private final String type;
@@ -48,25 +51,5 @@ public class EndpointConfig {
         this.methods = List.of(methods);
         this.pathVariablePatterns = Map.of();
         this.dependencies = List.of();
-    }
-
-    public String getPath() {
-        return this.path;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public List<String> getMethods() {
-        return methods;
-    }
-
-    public Map<String, String> getPathVariablePatterns() {
-        return pathVariablePatterns;
-    }
-
-    public List<String> getDependencies() {
-        return dependencies;
     }
 }

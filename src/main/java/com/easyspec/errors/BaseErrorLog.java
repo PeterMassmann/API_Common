@@ -10,8 +10,11 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDateTime;
 import java.util.Map;
 
-@Entity
-public class BaseErrorLog {
+@Setter
+@Getter
+@MappedSuperclass
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class BaseErrorLog {
 
     @Id
     @GeneratedValue(generator = "increment")
@@ -41,91 +44,4 @@ public class BaseErrorLog {
     @Convert(converter = Map2JsonConverter.class)
     private Map<String, Object> customData;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public LocalDateTime getCreation() {
-        return creation;
-    }
-
-    public void setCreation(LocalDateTime creation) {
-        this.creation = creation;
-    }
-
-    public String getEndpoint() {
-        return endpoint;
-    }
-
-    public void setEndpoint(String endpoint) {
-        this.endpoint = endpoint;
-    }
-
-    public String getMethod() {
-        return method;
-    }
-
-    public void setMethod(String method) {
-        this.method = method;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public String getIpAddress() {
-        return ipAddress;
-    }
-
-    public void setIpAddress(String ipAddress) {
-        this.ipAddress = ipAddress;
-    }
-
-    public String getUserAgent() {
-        return userAgent;
-    }
-
-    public void setUserAgent(String userAgent) {
-        this.userAgent = userAgent;
-    }
-
-    public String getErrorCode() {
-        return errorCode;
-    }
-
-    public void setErrorCode(String errorCode) {
-        this.errorCode = errorCode;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public Map<String, Object> getCustomData() {
-        return customData;
-    }
-
-    public void setCustomData(Map<String, Object> customData) {
-        this.customData = customData;
-    }
 }

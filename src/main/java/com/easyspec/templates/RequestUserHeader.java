@@ -1,9 +1,11 @@
 package com.easyspec.templates;
 
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.Getter;
 
 import java.util.List;
 
+@Getter
 public class RequestUserHeader {
 
     public static RequestUserHeader of(HttpServletRequest request) {
@@ -19,10 +21,6 @@ public class RequestUserHeader {
     private RequestUserHeader(String userId, List<String> adminPermissions) {
         this.userId = userId;
         this.adminPermissions = adminPermissions;
-    }
-
-    public String getUserId() {
-        return userId;
     }
 
     public boolean hasPermission(String permission) {
