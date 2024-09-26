@@ -23,6 +23,10 @@ public class RequestUserHeader {
         this.adminPermissions = adminPermissions;
     }
 
+    private Long getUserIdLong() {
+        return Long.parseLong(userId);
+    }
+
     public boolean hasPermission(String permission) {
         return adminPermissions.contains(permission);
     }
