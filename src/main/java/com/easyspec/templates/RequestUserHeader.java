@@ -23,7 +23,7 @@ public class RequestUserHeader {
         this.adminPermissions = adminPermissions;
     }
 
-    private Long getUserIdLong() {
+    public Long getUserIdLong() { // TODO MAKE PUBLIC
         return Long.parseLong(userId);
     }
 
