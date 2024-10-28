@@ -1,23 +1,26 @@
 package com.easyspec.templates;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
-@Getter
+import java.util.Set;
+
+@Getter @Setter @AllArgsConstructor
 public class FolderConfig {
 
-    private final String name;
-    private final String extension;
-    private final long maxFileSize; // in bytes
-    private final FolderPermission read;
-    private final FolderPermission write;
-    private final FolderPermission delete;
+    private String path;
 
-    public FolderConfig(String name, String extension, long maxFileSize, FolderPermission readAccessibility, FolderPermission writeAccessibility, FolderPermission deleteAccessibility) {
-        this.name = name;
-        this.extension = extension;
-        this.maxFileSize = maxFileSize;
-        this.read = readAccessibility;
-        this.write = writeAccessibility;
-        this.delete = deleteAccessibility;
-    }
+    private long maxSize;
+
+    private String writeCheckPath;
+
+    private String readCheckPath;
+
+    private boolean allowDelete;
+
+    private Set<String> allowedExtensions;
+
+    private Set<String> requiredMetadata;
+
 }
