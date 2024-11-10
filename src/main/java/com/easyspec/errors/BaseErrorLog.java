@@ -13,7 +13,6 @@ import java.util.Map;
 @Setter
 @Getter
 @MappedSuperclass
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class BaseErrorLog {
 
     @Id
