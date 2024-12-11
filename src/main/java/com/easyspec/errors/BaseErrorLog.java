@@ -41,6 +41,7 @@ public abstract class BaseErrorLog {
     private String message;
 
     @Convert(converter = Map2JsonConverter.class)
+    @Column(length = 3000)
     private Map<String, Object> customData;
 
 }
