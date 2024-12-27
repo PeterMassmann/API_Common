@@ -1,6 +1,6 @@
-package com.easyspec.utils;
+package com.easyspec.apicommon.utils;
 
-import com.easyspec.errors.BaseError;
+import com.easyspec.apicommon.errors.BaseError;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.test.web.servlet.ResultMatcher;

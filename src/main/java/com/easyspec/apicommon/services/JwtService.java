@@ -1,4 +1,4 @@
-package com.easyspec.services;
+package com.easyspec.apicommon.services;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

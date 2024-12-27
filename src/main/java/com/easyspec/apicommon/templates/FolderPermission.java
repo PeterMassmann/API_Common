@@ -1,4 +1,4 @@
-package com.easyspec.templates;
+package com.easyspec.apicommon.templates;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 

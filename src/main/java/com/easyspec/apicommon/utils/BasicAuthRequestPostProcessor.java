@@ -1,4 +1,4 @@
-package com.easyspec.utils;
+package com.easyspec.apicommon.utils;
 
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.test.web.servlet.request.RequestPostProcessor;

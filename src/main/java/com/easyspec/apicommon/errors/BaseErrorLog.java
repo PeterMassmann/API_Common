@@ -1,6 +1,6 @@
-package com.easyspec.errors;
+package com.easyspec.apicommon.errors;
 
-import com.easyspec.converters.Map2JsonConverter;
+import com.easyspec.apicommon.converters.Map2JsonConverter;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.Getter;

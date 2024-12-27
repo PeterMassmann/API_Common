@@ -1,8 +1,8 @@
-package com.easyspec.configuration;
+package com.easyspec.apicommon.scannable.configuration;
 
-import com.easyspec.errors.BaseErrorLog;
-import com.easyspec.errors.BaseErrorRepository;
-import com.easyspec.errors.ErrorLogException;
+import com.easyspec.apicommon.errors.BaseErrorLog;
+import com.easyspec.apicommon.errors.BaseErrorRepository;
+import com.easyspec.apicommon.errors.ErrorLogException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;

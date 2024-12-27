@@ -1,4 +1,4 @@
-package com.easyspec.templates;
+package com.easyspec.apicommon.templates;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

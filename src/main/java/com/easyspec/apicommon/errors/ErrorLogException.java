@@ -1,4 +1,4 @@
-package com.easyspec.errors;
+package com.easyspec.apicommon.errors;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
