@@ -23,10 +23,7 @@ public class ErrorLoggingControllerAdvisor<E extends BaseErrorLog> {
 
     private final BaseErrorRepository<E> errorRepository;
 
-    @Autowired
-    private ApplicationContext context;
-
-    public ErrorLoggingControllerAdvisor(Class<E> errorLogClass) {
+    public ErrorLoggingControllerAdvisor(Class<E> errorLogClass, ApplicationContext context) {
         this.errorLogClass = errorLogClass;
         this.errorRepository = (BaseErrorRepository<E>) context.getBean(
                 ResolvableType.forClassWithGenerics(BaseErrorRepository.class, errorLogClass).resolve()

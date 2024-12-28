@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 
+@NoRepositoryBean
 public interface BaseErrorRepository<E extends BaseErrorLog> extends CrudRepository<E, Long> {
 
     Long deleteAllByCreationBefore(LocalDateTime date);
