@@ -1,10 +1,13 @@
 package com.easyspec.apicommon.scannable.configuration;
 
 import com.easyspec.apicommon.errors.BaseErrorLog;
-import com.easyspec.apicommon.errors.BaseErrorRepository;
+import com.easyspec.apicommon.scannable.repositories.BaseErrorRepository;
 import com.easyspec.apicommon.errors.ErrorLogException;
+import com.easyspec.apicommon.services.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
+import org.springframework.core.ResolvableType;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -16,11 +19,19 @@ import java.util.Map;
 @ControllerAdvice
 public class ErrorLoggingControllerAdvisor<E extends BaseErrorLog> {
 
-    @Value("${error.log.class}")
-    private Class<E> errorLogClass;
+    private final Class<E> errorLogClass;
+
+    private final BaseErrorRepository<E> errorRepository;
 
     @Autowired
-    private BaseErrorRepository<E> errorRepository;
+    private ApplicationContext context;
+
+    public ErrorLoggingControllerAdvisor(Class<E> errorLogClass) {
+        this.errorLogClass = errorLogClass;
+        this.errorRepository = (BaseErrorRepository<E>) context.getBean(
+                ResolvableType.forClassWithGenerics(BaseErrorRepository.class, errorLogClass).resolve()
+        );
+    }
 
     @ExceptionHandler(ErrorLogException.class)
     public ResponseEntity<?> handleLogError(ErrorLogException e) {

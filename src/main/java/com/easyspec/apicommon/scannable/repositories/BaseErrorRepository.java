@@ -1,6 +1,9 @@
-package com.easyspec.apicommon.errors;
+package com.easyspec.apicommon.scannable.repositories;
 
+import com.easyspec.apicommon.errors.BaseErrorLog;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.NoRepositoryBean;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 
