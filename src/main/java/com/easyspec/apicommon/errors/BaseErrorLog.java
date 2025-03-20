@@ -1,6 +1,7 @@
 package com.easyspec.apicommon.errors;
 
 import com.easyspec.apicommon.converters.Map2JsonConverter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -22,6 +23,11 @@ public abstract class BaseErrorLog {
     @CreationTimestamp
     @Column(updatable = false)
     private LocalDateTime creation;
+
+    @JsonProperty
+    private Long getCreation() {
+        return creation == null ? null : creation.toEpochSecond(null);
+    }
 
     private String endpoint;
 
