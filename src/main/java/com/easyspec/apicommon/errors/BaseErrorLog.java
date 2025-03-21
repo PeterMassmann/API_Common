@@ -9,6 +9,7 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.Map;
 
 @Setter
@@ -26,7 +27,7 @@ public abstract class BaseErrorLog {
 
     @JsonProperty
     private Long getCreation() {
-        return creation == null ? null : creation.toEpochSecond(null);
+        return creation == null ? null : creation.toEpochSecond(ZoneOffset.UTC);
     }
 
     private String endpoint;
