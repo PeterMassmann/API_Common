@@ -27,7 +27,7 @@ public abstract class BaseErrorLog {
 
     @JsonProperty
     private Long getCreation() {
-        return creation == null ? null : creation.toEpochSecond(ZoneOffset.UTC);
+        return creation == null ? null : creation.toInstant(ZoneOffset.UTC).toEpochMilli();
     }
 
     private String endpoint;
